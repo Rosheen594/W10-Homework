@@ -20,11 +20,7 @@
       "encoding": {
         "longitude": {"field": "lon_x1","type": "quantitative"},
         "latitude": {"field": "lat_y1", "type": "quantitative"},
-        "size": {
-          "field": "BeachName",
-          "type": "nominal",
-          "scale": {"domain": [16]}
-        },
+        
         "color": {
           "field": "EventYear",
           "type": "ordinal",
