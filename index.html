@@ -1,31 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-
-    <script src="vega_lite_vis.js"></script>
-
-    <title>vega-lite graph </title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  
 </head>
-
 <body>
-    <h1>Map</h1>
+<h1>Map</h1>
+<div id="map"></div>
 
-    <div id="map">
-    </div>
+<h2>Stacked bars</h2>
+<div id="stacked_bars"></div>
 
+<script type="text/javascript">
 
-    <h1>Stacked bars</h1>
+  var spec2 = "js/map.vg.json";
+  vegaEmbed('#map', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
 
-    <div id="stacked_bars">
-    </div>
+  var spec3 = "js/stacked_bars.vg.json";
+  vegaEmbed('#stacked_bars', spec3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
 </body>
-
 </html>
+
